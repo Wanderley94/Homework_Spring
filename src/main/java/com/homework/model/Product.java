@@ -1,10 +1,24 @@
 package com.homework.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "products")
 public class Product {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "cost")
     private int cost;
+
+    public Product() {
+    }
 
     public Product(Long id, String title, int cost) {
         this.id = id;
